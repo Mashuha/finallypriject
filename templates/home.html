@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+<h2>Запрос на статистику</h2>
+<div class="container">
+            <div class="half" id="left">
+                <form id="equation-form" action="{{ url_for('result') }}" method="post">
+                    <label for="start_date">Дата начала анализа:</label>
+                    <input type="date" id="start_date" name="start_date" min="2023-02-14" max="2023-12-27" value="2023-12-15"><br>
+
+                    <label for="OrderBy">Тип анализа кол-во часов:</label><br>
+                        <input type="radio" id="DAYS" name="OrderBy" value="DAYS" checked style="width: max-content">
+                        <label for="DAYS">По дням</label><br>
+                        <input type="radio" id="TEACHERS" name="OrderBy" value="TEACHERS" style="width: max-content">
+                        <label for="TEACHERS">По преподавателям</label><br>
+                    <button type="submit" id="solve-btn" >Проанализируй</button>
+                  <script>
+                  const dt = document.getElementById('start_date');
+                  const solveBtn = document.getElementById('solve-btn');
+                    
+                  dt.addEventListener('input', validateInput);
+                  function validateInput() {
+                      var isValid = dt.value.length<10;
+                      console.log("doted");
+                      solveBtn.disabled = isValid;
+                  }
+                  </script>
+                </form>
+            </div>
+            <div class="half" id="right">
+                <p>
+                  
+                А сегодня вот такие предметы сегодня:
+                {% for item in lessons_tip %}
+                <div id="equalation">{{ item }}</div>
+                {% endfor %}
+              </p>
+              <p>
+                  
+                А вот последние новости института математики и информатики:
+                {% for item in news %}
+                  <div id="equalation">{{ item }}</div>
+                {% endfor %}
+              </p>
+            </div>
+        </div>
+
+
+
+
+{% endblock %}
+

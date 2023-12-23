@@ -1,0 +1,116 @@
+body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #292c33;
+    padding: 15px;
+    text-align: center;
+}
+
+header a {
+    text-decoration: none;
+    color: #ffffff;
+    margin: 0 15px;
+}
+
+#logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#how-it-works {
+  background: linear-gradient(to right, #4e2a6d, #964253);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.container {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.half {
+    margin: 10px;
+    flex-grow: 1;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+#how-it-works, #solver, #footer {
+    margin: 20px;
+    padding: 20px;
+    background-color: #292c33;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+#how-it-works h1{
+    width: 100%;
+    color: #ffffff;
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 10px;
+}
+
+#solver h2, #footer h2 {
+    width: 100%;
+    color: #61dafb;
+    border-bottom: 2px solid #61dafb;
+    padding-bottom: 10px;
+}
+
+#solver input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #61dafb;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+#solve-btn {
+    display: block;
+    width: fit-content;
+    padding: 10px;
+    background-color: #61dafb;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#solve-btn:disabled {
+    background-color: #999999;
+    cursor: not-allowed;
+}
+footer {
+    padding: 5px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+}
+
+#equalation{
+    background-color: #FFF;
+    color: black;
+    padding: 4px;
+    margin: 2px;
+    border-radius: 5px;
+    width: max-content;
+
+}
