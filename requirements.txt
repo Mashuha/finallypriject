@@ -1,5 +1,4 @@
-Flask
 matplotlib
 beautifulsoup4
 requests
-base64
+flask
