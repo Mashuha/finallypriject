@@ -12,9 +12,6 @@ from urllib.request import urlopen
 
 app = Flask(__name__)
 
-url = 'http://https://rp5.ru/Погода_в_'
-page = urlopen(url)
-print(page.read().decode('utf-8'))
 
 
 @app.route("/", methods=['POST', 'GET'])
@@ -29,6 +26,9 @@ def aboutus():
 
 @app.route("/result", methods=['POST'])
 def result():
+    city = request.form['start_date']
+    url = 'http://rp5.ru/Погода_в_'+city
+    return url
     # ax.set_xticks(keys)
     # ax.set_xticklabels(keys, rotation=-45, fontsize=6)
     # ax.set_ylabel('Кол-во часов')
@@ -38,7 +38,7 @@ def result():
     # fig.savefig(buf, format='png')
     # data = base64.b64encode(buf.getbuffer()).decode('ascii')
 
-    return render_template("result.html")
+    # return render_template("result.html")
 
 
 if __name__ == '__main__':
