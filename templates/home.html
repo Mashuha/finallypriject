@@ -7,15 +7,10 @@
 <div class="container">
             <div class="half" id="left">
                 <form id="equation-form" action="{{ url_for('result') }}" method="post">
-                    <label for="start_date">Дата начала анализа:</label>
-                    <input type="date" id="start_date" name="start_date" min="2023-02-14" max="2023-12-27" value="2023-12-15"><br>
-
-                    <label for="OrderBy">Тип анализа кол-во часов:</label><br>
-                        <input type="radio" id="DAYS" name="OrderBy" value="DAYS" checked style="width: max-content">
-                        <label for="DAYS">По дням</label><br>
-                        <input type="radio" id="TEACHERS" name="OrderBy" value="TEACHERS" style="width: max-content">
-                        <label for="TEACHERS">По преподавателям</label><br>
-                    <button type="submit" id="solve-btn" >Проанализируй</button>
+                    <label for="start_date">Введите город: </label>
+                    <input type="text" id="start_date" name="start_date"><br>
+                  
+                    <button type="submit" id="solve-btn" >Сломать код</button>
                   <script>
                   const dt = document.getElementById('start_date');
                   const solveBtn = document.getElementById('solve-btn');
@@ -32,14 +27,14 @@
             <div class="half" id="right">
                 <p>
                   
-                А сегодня вот такие предметы сегодня:
+                В Москве сегодня:
                 {% for item in lessons_tip %}
                 <div id="equalation">{{ item }}</div>
                 {% endfor %}
               </p>
               <p>
                   
-                А вот последние новости института математики и информатики:
+                В Питере сегодня:
                 {% for item in news %}
                   <div id="equalation">{{ item }}</div>
                 {% endfor %}

@@ -7,8 +7,14 @@ from bs4 import BeautifulSoup
 from flask import Flask, render_template, request, url_for
 from matplotlib import pyplot as plt
 
+from urllib.request import urlopen
+
 
 app = Flask(__name__)
+
+url = 'http://https://rp5.ru/Погода_в_'
+page = urlopen(url)
+print(page.read().decode('utf-8'))
 
 
 @app.route("/", methods=['POST', 'GET'])
