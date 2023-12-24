@@ -10,22 +10,20 @@
 
     <header>
         <a href="{{ url_for("main_page") }}" id="logo">PogodaMankii</a>
-        <a href="#how-it-works">Как работает?</a>
-        <a href="#solver">Запрос на статистику</a>
+        
         <a href="{{ url_for('aboutus') }}">О проекте</a>
     </header>
 
-    <div id="how-it-works">
+    <div id="work">
         <h1>Как это работает?</h1>
         <p>Введите город, в котором Вы живете, и получите статистику на неделю.</p>
     </div>
 
-    <div id="solver">
+    <div >
         {% block content %}
         {% endblock %}
     </div>
-    <br><br><br><br><br><br><br>
-
+    <br><br>
     <footer id="footer">
         <p>© 2023 Мария Асауляк</p>
     </footer>
