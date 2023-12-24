@@ -18,7 +18,7 @@ def main_page():
 
 @app.route("/aboutus", methods=['POST', 'GET'])
 def aboutus():
-    return render_template('aboutus.html')
+    return render_template('about.html')
 
 
 @app.route("/result", methods=['POST'])
