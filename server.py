@@ -53,7 +53,7 @@ def result():
         max_list[day].append(max(block['temp']))
         for i in block['temp']:
           full_list[day].append(i)
-
+  
     temp_max_list = []
     keys = []
     for day in list(max_list):
@@ -61,7 +61,9 @@ def result():
         
         temp_max_list.append(temp)
         keys.append(day + f'({type_name[len(type_name)-len(max_list[day])+i]})')
-    print("-"*10, temp_max_list)
+    
+    keys = sorted(keys)[1:]
+    temp_max_list = temp_max_list[1:]
     fig, ax = plt.subplots()
     ax.plot(keys, temp_max_list)
     ax.set_xticklabels(keys, rotation=-45, fontsize=6)
