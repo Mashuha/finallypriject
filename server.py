@@ -7,13 +7,10 @@ from bs4 import BeautifulSoup
 from flask import Flask, render_template, request, url_for
 from matplotlib import pyplot as plt
 
-from urllib.request import urlopen
-import webbrowser
-
-
 
 app = Flask(__name__)
 
+soup = BeautifulSoup(requests.get("https://www.pogoda.msk.ru/").content, 'html.parser')
 
 
 @app.route("/", methods=['POST', 'GET'])
