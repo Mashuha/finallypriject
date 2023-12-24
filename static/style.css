@@ -39,6 +39,7 @@ header a {
 }
 
 footer {
+    position: relative;
     background: linear-gradient(to right, #acb6e5, #74ebd5);
     padding: 20px;
     text-align: center;
