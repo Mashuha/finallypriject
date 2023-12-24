@@ -64,7 +64,7 @@ def result():
     fig, ax = plt.subplots()
     ax.plot(keys, temp_max_list)
     ax.set_xticklabels(keys, rotation=-45, fontsize=6)
-    ax.set_ylabel('max temp')
+    ax.set_ylabel('температура')
     ax.set_xlabel('Дни(<периоды>)')
     ax.grid()
     buf = BytesIO()
