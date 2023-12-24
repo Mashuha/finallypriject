@@ -33,13 +33,13 @@ def main_page():
 
 
 @app.route("/about", methods=['POST', 'GET'])
-def aboutus():
+def about():
     return render_template('about.html')
 
 
 @app.route("/result", methods=['POST'])
 def result():
-    type_name = ["Утро", "День", "Вечер", "Ночь"]
+    type_name = ["06:00", "12:00", "18:00", "00:00"]
     dt = request.form['date']
    
     max_list = {}
@@ -58,9 +58,10 @@ def result():
     keys = []
     for day in list(max_list):
       for i, temp in enumerate(max_list[day]):
+        
         temp_max_list.append(temp)
         keys.append(day + f'({type_name[len(type_name)-len(max_list[day])+i]})')
-    
+    print("-"*10, temp_max_list)
     fig, ax = plt.subplots()
     ax.plot(keys, temp_max_list)
     ax.set_xticklabels(keys, rotation=-45, fontsize=6)
@@ -70,8 +71,9 @@ def result():
     buf = BytesIO()
     fig.savefig(buf, format='png')
     image = base64.b64encode(buf.getbuffer()).decode('ascii')
+    avg=sum(full_list[dt])/len(full_list[dt])
     
-    return render_template("result.html", day=dt, image = image, max=max(full_list[dt]), min=min(full_list[dt]), avg=sum(full_list[dt])/len(full_list[dt]))
+    return render_template("result.html", day=dt, image = image, max=max(full_list[dt]), min=min(full_list[dt]), avg = avg)
 
 
 if __name__ == '__main__':
