@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "main.html" %}
 
 {% block title %}Результат{% endblock %}
 
@@ -16,7 +16,7 @@
         <h3 style="font-weight: bold;">avg: <div id="equalation">{{ avg }} {{ type_time }}.</div></h3>
         <h3 style="font-weight: bold;">max: <div id="equalation">{{ max[0] }}  - <span style="color: #cc5454;">{{ max[1] }} {{ type_time }}.</span></div></h3>
 
-        <a href="{{ url_for("main_page") }}" id="solve-btn">< Назад</a>
+        <a href="{{ url_for("main_page") }}" id="solve-btn">Назад</a>
     </div>
     <div class="half" id="right">
         <h3>График</h3>
