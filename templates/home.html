@@ -3,34 +3,18 @@
 {% block title %}Главная{% endblock %}
 
 {% block content %}
-<h2>Статистика</h2>
+<h1>Статистика</h1>
 <div class="container">
-                <h1>Погода в москве</h1>
-                <form id="equation-form" action="{{ url_for('result') }}" method="post">
-                    <p><b><label for="start_date">Введите дату: </label></b></p>
-                    <p><input name="start_date" type="radio" value="pdzen" checked> {{dates[0]}}</p>
-                    <p><input name="start_date" type="radio" value="nedzen"> Не дзен</p>
-                    <p><input name="start_date" type="radio" value="dzen"> Дзен</p>
-                    <button type="submit">Сломать код</button>
-                </form>
-<!--             </div>
-            <div class="half" id="right">
-                <p>
-                  
-                В Москве сегодня:
-                {% for item in lessons_tip %}
-                <div id="equalation">{{ item }}</div>
-                {% endfor %}
-              </p>
-              <p>
-                  
-                В Питере сегодня:
-                {% for item in news %}
-                  <div id="equalation">{{ item }}</div>
-                {% endfor %}
-              </p>
-            </div> -->
-        </div>
+    <h2>Погода в москве</h2>
+    <form id="equation-form" action="{{ url_for('result') }}" method="post">
+        <p><b><label for="start_date">Введите дату: </label></b></p>
+        <p><input name="start_date" type="radio" value="{{dates[0]}}" checked> {{dates[0]}}</p>
+        {% for day in dates[1:] %}
+        <p><input name="start_date" type="radio" value="{{day}}"> {{day}}</p>
+        {% endfor %}
+        <button type="submit">Сломать код</button>
+    </form>
+</div>
 
 
 

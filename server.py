@@ -39,10 +39,11 @@ def aboutus():
 
 @app.route("/result", methods=['POST'])
 def result():
+    type_name = ["Утро", "День", "Вечер", ""]
     dt = request.form['start_date']
     
     max_list = {}
-    full_temp = {}
+    full_list = {}
     for day in list(data):
       for block in data[day]:
         if day not in max_list:
@@ -61,15 +62,16 @@ def result():
         keys.append(day + f'({i+1})')
     
     fig, ax = plt.subplots()
+    ax.plot(keys, temp_max_list)
     ax.set_xticklabels(keys, rotation=-45)
     ax.set_ylabel('max temp')
     ax.set_xlabel('Дни(<периоды>)')
     ax.grid()
     buf = BytesIO()
     fig.savefig(buf, format='png')
-    data = base64.b64encode(buf.getbuffer()).decode('ascii')
-
-    return render_template("result.html",image = data, max=max(full_temp[dt]), min=min(ull_temp[dt]), avg=full_temp[dt]/len(full_temp[dt]))
+    image = base64.b64encode(buf.getbuffer()).decode('ascii')
+    
+    return render_template("result.html", day=dt, image = image, max=max(full_list[dt]), min=min(full_list[dt]), avg=sum(full_list[dt])/len(full_list[dt]))
 
 
 if __name__ == '__main__':
