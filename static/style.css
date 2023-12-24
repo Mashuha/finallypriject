@@ -1,0 +1,54 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f8f8f8;
+}
+
+header {
+    background: linear-gradient(to right, #74ebd5, #acb6e5);
+    padding: 20px;
+    text-align: center;
+}
+
+#logo {
+    color: #ffffff;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header a {
+    color: #ffffff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#how-it-works {
+    padding: 50px;
+    text-align: center;
+}
+
+#how-it-works h1 {
+    color: #333333;
+}
+
+#solver {
+    padding: 50px;
+}
+
+footer {
+    background: linear-gradient(to right, #acb6e5, #74ebd5);
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    color: #ffffff;
+    margin: 0;
+    font-size: 14px;
+}

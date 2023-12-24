@@ -39,7 +39,7 @@ def aboutus():
 
 @app.route("/result", methods=['POST'])
 def result():
-    type_name = ["Утро", "День", "Вечер", ""]
+    type_name = ["Утро", "День", "Вечер", "Ночь"]
     dt = request.form['start_date']
     
     max_list = {}
@@ -59,11 +59,11 @@ def result():
     for day in list(max_list):
       for i, temp in enumerate(max_list[day]):
         temp_max_list.append(temp)
-        keys.append(day + f'({i+1})')
+        keys.append(day + f'({type_name[len(type_name)-len(max_list[day])+i]})')
     
     fig, ax = plt.subplots()
     ax.plot(keys, temp_max_list)
-    ax.set_xticklabels(keys, rotation=-45)
+    ax.set_xticklabels(keys, rotation=-45, fontsize=6)
     ax.set_ylabel('max temp')
     ax.set_xlabel('Дни(<периоды>)')
     ax.grid()
