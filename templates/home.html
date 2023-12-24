@@ -5,23 +5,13 @@
 {% block content %}
 <h2>Статистика</h2>
 <div class="container">
-            <div class="half" id="left">
+                <h1>Погода в москве</h1>
                 <form id="equation-form" action="{{ url_for('result') }}" method="post">
-                    <label for="start_date">Введите город: </label>
-                    <input type="text" id="start_date" name="start_date"><br>
-                  
-                    <button type="submit" id="solve-btn" >Сломать код</button>
-<!--                   <script>
-                  const dt = document.getElementById('start_date');
-                  const solveBtn = document.getElementById('solve-btn');
-                    
-                  dt.addEventListener('input', validateInput);
-                  function validateInput() {
-                      var isValid = dt.value.length<10;
-                      console.log("doted");
-                      solveBtn.disabled = isValid;
-                  }
-                  </script> -->
+                    <p><b><label for="start_date">Введите дату: </label></b></p>
+                    <p><input name="start_date" type="radio" value="pdzen" checked> {{dates[0]}}</p>
+                    <p><input name="start_date" type="radio" value="nedzen"> Не дзен</p>
+                    <p><input name="start_date" type="radio" value="dzen"> Дзен</p>
+                    <button type="submit">Сломать код</button>
                 </form>
 <!--             </div>
             <div class="half" id="right">
