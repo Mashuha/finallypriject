@@ -16,7 +16,7 @@ def main_page():
     return render_template('home.html')
 
 
-@app.route("/about", methods=['POST', 'GET'])
+@app.route("/aboutus", methods=['POST', 'GET'])
 def aboutus():
     return render_template('about.html')
 
