@@ -32,7 +32,7 @@ def main_page():
     return render_template('home.html', dates = list(data))
 
 
-@app.route("/aboutus", methods=['POST', 'GET'])
+@app.route("/about", methods=['POST', 'GET'])
 def aboutus():
     return render_template('about.html')
 
@@ -40,7 +40,7 @@ def aboutus():
 @app.route("/result", methods=['POST'])
 def result():
     type_name = ["Утро", "День", "Вечер", "Ночь"]
-    dt = request.form['start_date']
+    dt = request.form['date']
    
     max_list = {}
     full_list = {}

@@ -5,11 +5,11 @@
 {% block content %}
 <div class="container">
     <h2>Погода в москве</h2>
-    <form id="equation-form" action="{{ url_for('result') }}" method="post">
-        <p><b><label for="start_date">Введите дату: </label></b></p>
-        <p><input name="start_date" type="radio" value="{{dates[0]}}" checked> {{dates[0]}}</p>
+    <form id="form" action="{{ url_for('result') }}" method="post">
+        <p><b><label for="date">Введите дату: </label></b></p>
+        <p><input name="date" type="radio" value="{{dates[0]}}" checked> {{dates[0]}}</p>
         {% for day in dates[1:] %}
-        <p><input name="start_date" type="radio" value="{{day}}"> {{day}}</p>
+        <p><input name="date" type="radio" value="{{day}}"> {{day}}</p>
         {% endfor %}
         <button type="submit">Сломать код</button>
     </form>
