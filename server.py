@@ -8,6 +8,8 @@ from flask import Flask, render_template, request, url_for
 from matplotlib import pyplot as plt
 
 from urllib.request import urlopen
+import webbrowser
+
 
 
 app = Flask(__name__)
@@ -27,8 +29,7 @@ def aboutus():
 @app.route("/result", methods=['POST'])
 def result():
     city = request.form['start_date']
-    url = 'http://rp5.ru/Погода_в_'+city
-    return url
+    return city
     # ax.set_xticks(keys)
     # ax.set_xticklabels(keys, rotation=-45, fontsize=6)
     # ax.set_ylabel('Кол-во часов')
@@ -38,7 +39,7 @@ def result():
     # fig.savefig(buf, format='png')
     # data = base64.b64encode(buf.getbuffer()).decode('ascii')
 
-    # return render_template("result.html")
+    return render_template("result.html")
 
 
 if __name__ == '__main__':
