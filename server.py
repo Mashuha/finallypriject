@@ -41,7 +41,7 @@ def aboutus():
 def result():
     type_name = ["Утро", "День", "Вечер", "Ночь"]
     dt = request.form['start_date']
-    
+   
     max_list = {}
     full_list = {}
     for day in list(data):
